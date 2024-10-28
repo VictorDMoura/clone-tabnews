@@ -27,3 +27,10 @@ test("POST to /api/v1/migrations should return 200", async () => {
   expect(Array.isArray(response2BodyBody)).toBe(true);
   expect(response2BodyBody.length).toBe(0);
 });
+
+test("Another method to /api/v1/migrations should return 405", async () => {
+  const response = await fetch("http://localhost:3000/api/v1/migrations", {
+    method: "PUT",
+  });
+  expect(response.status).toBe(405);
+});
