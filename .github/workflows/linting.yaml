@@ -3,8 +3,8 @@ name: Automated Tests
 on: pull_request
 
 jobs:
-  prettier:
-    name: Prettier
+  eslint:
+    name: Eslint
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,4 +15,4 @@ jobs:
 
       - run: npm ci
 
-      - run: npm run lint:prettier:check
+      - run: npm run lint:eslint:check
